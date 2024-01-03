@@ -58,7 +58,7 @@ SELECT name
 FROM people
 WHERE name LIKE 'B%';
 
--- Select the names that have r as the second letter
+-- Select the names that have "r" as the second letter
 SELECT name
 FROM people
 WHERE name LIKE '_r%';
