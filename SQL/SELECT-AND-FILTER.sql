@@ -67,3 +67,17 @@ WHERE name LIKE '_r%';
 SELECT name
 FROM people
 WHERE name NOT LIKE 'A%';
+
+-- Find the title, certification, and language all films certified NC-17 or R that are in English, Italian, or Greek
+SELECT title, certification, language
+FROM films
+WHERE language IN ('English', 'Italian', 'Greek')
+    AND certification IN ('NC-17', 'R');
+
+-- Count the unique titles; -- Filter to release_years to between 1990 and 1999
+-- Filter to English-language films -- Narrow it down to G, PG, and PG-13 certifications
+SELECT COUNT (DISTINCT title) AS nineties_english_films_for_teens
+FROM films
+WHERE release_year BETWEEN 1990 and 1999
+	AND language = 'English'
+	AND certification IN ('G', 'PG', 'PG-13');
